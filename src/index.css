@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-serif);
+  }
+
+  /* Accessible visible focus outline complying with Russian GOST and Section 2.2.3.6.5 */
+  :focus-visible {
+    outline: 3px solid #b45309;
+    outline-offset: 3px;
+  }
+}
+
+/* Accessibility Modes (ГОСТ Р 70176-2022 & Постановление Правительства РФ № 102) */
+.access-scheme-bw {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.access-scheme-bw * {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: none !important;
+}
+.access-scheme-bw a, .access-scheme-bw button {
+  text-decoration: underline !important;
+}
+
+.access-scheme-wb {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+.access-scheme-wb * {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+.access-scheme-wb a, .access-scheme-wb button {
+  text-decoration: underline !important;
+}
+
+.access-scheme-blue {
+  background-color: #cce7ff !important;
+  color: #063970 !important;
+}
+.access-scheme-blue * {
+  background-color: transparent !important;
+  color: #063970 !important;
+  border-color: #063970 !important;
+}
+
+.access-scheme-yellow {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+.access-scheme-yellow * {
+  background-color: transparent !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+/* Font size scalers in rem as strictly required by Section 2.2.3.8.1 */
+.font-scale-100 {
+  font-size: 1rem;
+}
+.font-scale-150 {
+  font-size: 1.25rem;
+}
+.font-scale-150 h1 { font-size: 2.75rem; }
+.font-scale-150 h2 { font-size: 2.25rem; }
+.font-scale-150 h3 { font-size: 1.75rem; }
+
+.font-scale-200 {
+  font-size: 1.5rem;
+}
+.font-scale-200 h1 { font-size: 3.25rem; }
+.font-scale-200 h2 { font-size: 2.75rem; }
+.font-scale-200 h3 { font-size: 2.25rem; }
+
+.spacing-normal {
+  letter-spacing: normal;
+}
+.spacing-medium {
+  letter-spacing: 0.1em;
+}
+.spacing-large {
+  letter-spacing: 0.2em;
+}
+
+/* Hide images toggle for visually impaired users */
+.hide-visual-images img,
+.hide-visual-images [role="img"] {
+  display: none !important;
+}
+.hide-visual-images .image-accessible-alt {
+  display: block !important;
+  padding: 0.5rem;
+  border: 1px dashed currentColor;
+  margin: 0.25rem 0;
+  font-style: italic;
+}
